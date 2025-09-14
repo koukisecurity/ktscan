@@ -1,0 +1,85 @@
+checks:
+  CRYPTO.DSA_DEPRECATED:
+    description: DSA algorithm is deprecated in NIST guidance
+    section: '3.2'
+    severity: HIGH
+    title: NIST DSA Algorithm Deprecated
+    url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+  CRYPTO.EC_CURVE_UNAPPROVED:
+    description: Elliptic curve is not NIST-approved
+    section: '3.2'
+    severity: HIGH
+    title: NIST Unapproved Elliptic Curve
+    url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+  CRYPTO.MINIMUM_KEY_SIZE:
+    description: Cryptographic key below NIST minimum security strength
+    section: '3.2'
+    severity: HIGH
+    title: NIST Minimum Key Size
+    url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+  CRYPTO.NIST_DEPRECATED:
+    description: Signature algorithm is deprecated by NIST
+    section: '3.3'
+    severity: HIGH
+    title: NIST Deprecated Signature Algorithm
+    url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+  CRYPTO.NIST_INSUFFICIENT_RSA:
+    description: RSA key size below NIST minimum requirements
+    section: '3.2'
+    severity: HIGH
+    title: NIST Insufficient RSA Key Size
+    url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+  CRYPTO.RSA_SIZE_INSUFFICIENT:
+    description: RSA key size below NIST minimum requirements
+    section: '3.2'
+    severity: HIGH
+    title: NIST Insufficient RSA Key Size
+    url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+  CRYPTO.UNAPPROVED_EC_CURVE:
+    description: Elliptic curve not approved by NIST
+    section: '3.2'
+    severity: HIGH
+    title: Unapproved Elliptic Curve
+    url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+  CRYPTO.WEAK_ALGORITHM:
+    description: Signature algorithm not approved by NIST
+    section: '3.3'
+    severity: CRITICAL
+    title: Weak Signature Algorithm
+    url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+  CRYPTO.WEAK_DSA:
+    description: DSA key size below NIST requirements
+    section: '3.2'
+    severity: CRITICAL
+    title: Weak DSA Key Size
+    url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+  CRYPTO.WEAK_EC_CURVE:
+    description: Elliptic curve provides insufficient security strength
+    section: '3.2'
+    severity: HIGH
+    title: Weak Elliptic Curve
+    url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+  CRYPTO.WEAK_RSA:
+    description: RSA key size below NIST recommendations
+    section: '3.2'
+    severity: HIGH
+    title: Weak RSA Key Size
+    url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+  CRYPTO.NIST_DSA_DEPRECATED:
+    description: DSA signature algorithm is deprecated by NIST
+    section: '3.3'
+    severity: HIGH
+    title: NIST DSA Signature Deprecated
+    url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+  TRUST.UNTRUSTED_ROOT:
+    description: Certificate chain does not terminate at trusted root
+    section: '4.1'
+    severity: HIGH
+    title: Untrusted Root Certificate
+    url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+description: Guidelines for the Selection, Configuration, and Use of Transport Layer
+  Security (TLS) Implementations
+standard_name: NIST_800-52r2
+title: NIST SP 800-52 Rev 2
+url: https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final
+version: Rev 2

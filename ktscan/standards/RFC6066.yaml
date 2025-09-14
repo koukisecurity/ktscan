@@ -1,0 +1,31 @@
+checks:
+  SUBJECT.HOSTNAME_MISMATCH:
+    description: Server Name Indication (SNI) hostname validation per RFC 6066
+    section: '3'
+    severity: CRITICAL
+    title: Hostname Mismatch
+    url: https://tools.ietf.org/rfc/rfc6066.txt#section-3
+  SUBJECT.INVALID_DNS_NAME:
+    description: Subject Alternative Name DNS validation per RFC 6066
+    section: '3'
+    severity: HIGH
+    title: Invalid DNS Name in SAN
+    url: https://tools.ietf.org/rfc/rfc6066.txt#section-3
+  SUBJECT.OTHER_NAME_TYPES:
+    description: Alternative name type usage per RFC 6066
+    section: '3'
+    severity: INFO
+    title: Other Name Types in SAN
+    url: https://tools.ietf.org/rfc/rfc6066.txt#section-3
+  SUBJECT.WILDCARD_IN_CN:
+    description: Wildcard certificate validation considerations per RFC 6066
+    section: '3'
+    severity: MEDIUM
+    title: Wildcard in Common Name
+    url: https://tools.ietf.org/rfc/rfc6066.txt#section-3
+description: IETF standard defining TLS extensions including Server Name Indication
+  and other certificate-related extensions
+standard_name: RFC6066
+title: 'RFC 6066 - Transport Layer Security (TLS) Extensions: Extension Definitions'
+url: https://tools.ietf.org/rfc/rfc6066.txt
+version: RFC 6066

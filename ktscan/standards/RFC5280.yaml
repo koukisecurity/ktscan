@@ -1,0 +1,159 @@
+checks:
+  CERT.INVALID_SERIAL_NUMBER:
+    description: Certificate serial number must be greater than zero
+    section: 4.1.2.2
+    severity: HIGH
+    title: Invalid Serial Number
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.1.2.2
+  EXTENSION.KEY_USAGE_NOT_CRITICAL:
+    description: Key Usage extension should be marked as critical for CA certificates
+    section: 4.2.1.3
+    severity: MEDIUM
+    title: Key Usage Extension Not Critical
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.2.1.3
+  EXTENSION.MISSING_BASIC_CONSTRAINTS:
+    description: Certificate lacks Basic Constraints extension
+    section: 4.2.1.9
+    severity: HIGH
+    title: Missing Basic Constraints
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.2.1.9
+  EXTENSION.RFC5280_CA_BASIC_CONSTRAINTS_NOT_CRITICAL:
+    description: CA certificate's Basic Constraints extension must be critical per
+      RFC 5280
+    section: 4.2.1.9
+    severity: HIGH
+    title: RFC 5280 CA Basic Constraints Not Critical
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.2.1.9
+  EXTENSION.RFC5280_UNKNOWN_CRITICAL_EXTENSION:
+    description: Certificate contains unknown critical extension
+    section: '4.2'
+    severity: HIGH
+    title: RFC 5280 Unknown Critical Extension
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.2
+  REVOCATION.CRL_DP_WITH_REASONS:
+    description: CRL Distribution Point specifies reasons per RFC 5280
+    section: 4.2.1.13
+    severity: LOW
+    title: CRL Distribution Point with Reasons
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.2.1.13
+  REVOCATION.CRL_PARSE_ERROR:
+    description: Failed to parse Certificate Revocation List per RFC 5280
+    section: '5'
+    severity: HIGH
+    title: CRL Parse Error
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-5
+  REVOCATION.REVOKED_IN_CHAIN:
+    description: Certificate chain contains revoked certificate
+    section: 6.1.1
+    severity: CRITICAL
+    title: Revoked Certificate in Chain
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-6.1.1
+  SUBJECT.MISSING_EXTENSION:
+    description: Certificate lacks Subject Alternative Name extension
+    section: 4.2.1.6
+    severity: HIGH
+    title: Missing SAN Extension
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.2.1.6
+  SUBJECT.NO_HOSTNAME_IDENTIFIERS:
+    description: Certificate lacks hostname identifiers in subject or SAN
+    section: 4.2.1.6
+    severity: CRITICAL
+    title: No Hostname Identifiers
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.2.1.6
+  SUBJECT.RFC5280_EMPTY_SUBJECT_AND_SAN:
+    description: Certificate has empty subject and empty Subject Alternative Name
+    section: 4.2.1.6
+    severity: CRITICAL
+    title: RFC 5280 Empty Subject and SAN
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.2.1.6
+  SUBJECT.RFC5280_EMPTY_SUBJECT_NO_SAN:
+    description: Certificate has empty subject and no Subject Alternative Name
+    section: 4.2.1.6
+    severity: CRITICAL
+    title: RFC 5280 Empty Subject Without SAN
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.2.1.6
+  TRUST.EXPIRED_IN_CHAIN:
+    description: Certificate chain contains expired certificate
+    section: 6.1.1
+    severity: HIGH
+    title: Expired Certificate in Chain
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-6.1.1
+  TRUST.INCOMPLETE_CHAIN:
+    description: Certificate chain validation requirements
+    section: 4.1.1.2
+    severity: MEDIUM
+    title: Incomplete Certificate Chain
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.1.1.2
+  TRUST.PATH_VALIDATION_ERROR:
+    description: Error during certificate path validation
+    section: '6'
+    severity: MEDIUM
+    title: Path Validation Error
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-6
+  TRUST.PATH_VALIDATION_FAILED:
+    description: Certificate chain path validation failed
+    section: '6'
+    severity: HIGH
+    title: Path Validation Failed
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-6
+  TRUST.SIGNATURE_INVALID:
+    description: Certificate signature verification failed in the chain
+    section: 4.1.1.2
+    severity: HIGH
+    title: Invalid Certificate Chain Signature
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.1.1.2
+  TRUST.STORE_UNAVAILABLE:
+    description: Unable to load system trust store for validation
+    section: '6'
+    severity: MEDIUM
+    title: Trust Store Unavailable
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-6
+  TRUST.UNTRUSTED_ROOT:
+    description: Certificate chain does not terminate at a trusted root CA
+    section: 6.1.1
+    severity: HIGH
+    title: Untrusted Root Certificate
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-6.1.1
+  VALIDITY.EXPIRED:
+    description: Certificate has expired
+    section: 4.1.2.5
+    severity: CRITICAL
+    title: Certificate Expired
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.1.2.5
+  VALIDITY.EXPIRES_WITHIN_30_DAYS:
+    description: Certificate validity period monitoring per RFC 5280
+    section: 4.1.2.5
+    severity: LOW
+    title: Certificate Expires Within 30 Days
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.1.2.5
+  VALIDITY.EXPIRES_WITHIN_7_DAYS:
+    description: Certificate validity period monitoring per RFC 5280
+    section: 4.1.2.5
+    severity: MEDIUM
+    title: Certificate Expires Within 7 Days
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.1.2.5
+  VALIDITY.LIFETIME_TOO_LONG:
+    description: Certificate validity period considerations per RFC 5280
+    section: 4.1.2.5
+    severity: HIGH
+    title: Certificate Lifetime Too Long
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.1.2.5
+  VALIDITY.LIFETIME_TOO_SHORT:
+    description: Certificate validity period requirements per RFC 5280
+    section: 4.1.2.5
+    severity: HIGH
+    title: Certificate Lifetime Too Short
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.1.2.5
+  VALIDITY.NOT_YET_VALID:
+    description: Certificate is not yet valid
+    section: 4.1.2.5
+    severity: CRITICAL
+    title: Certificate Not Yet Valid
+    url: https://tools.ietf.org/rfc/rfc5280.txt#section-4.1.2.5
+description: IETF standard defining X.509 certificate and CRL format and processing
+  rules
+standard_name: RFC5280
+title: RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate
+  Revocation List (CRL) Profile
+url: https://tools.ietf.org/rfc/rfc5280.txt
+version: RFC 5280

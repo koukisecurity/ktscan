@@ -1,0 +1,54 @@
+checks:
+  CERT.SUBJECT.HOSTNAME_MISMATCINVALID_VERSION:
+    description: Certificate version field validation per ITU-T X.509
+    section: '7.1'
+    severity: HIGH
+    title: Invalid Certificate Version
+    url: https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=X.509
+  EXTENSION.MISSING_CERTIFICATE_POLICIES:
+    description: Certificate policies extension framework per ITU-T X.509
+    section: '8.4'
+    severity: MEDIUM
+    title: Missing Certificate Policies
+    url: https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=X.509
+  SUBJECT.HOSTNAME_MISMATCH:
+    description: Certificate identity validation framework per ITU-T X.509
+    section: '8.1'
+    severity: CRITICAL
+    title: Hostname Validation Mismatch
+    url: https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=X.509
+  TRUST.INCOMPLETE:
+    description: Certificate path validation framework per ITU-T X.509
+    section: '8.1'
+    severity: MEDIUM
+    title: Incomplete Certificate Chain
+    url: https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=X.509
+  TRUST.VALIDATION_ERROR:
+    description: Certificate path validation error per ITU-T X.509
+    section: '8.1'
+    severity: HIGH
+    title: Chain Validation Error
+    url: https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=X.509
+  VALIDITY.LIFETIME_EXCEEDS_100_DAYS:
+    description: Certificate validity period considerations per ITU-T X.509
+    section: 7.1.2
+    severity: LOW
+    title: Certificate Lifetime Exceeds 100 Days
+    url: https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=X.509
+  VALIDITY.LIFETIME_EXCEEDS_200_DAYS:
+    description: Certificate validity period considerations per ITU-T X.509
+    section: 7.1.2
+    severity: LOW
+    title: Certificate Lifetime Exceeds 200 Days
+    url: https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=X.509
+  VALIDITY.LIFETIME_EXCEEDS_47_DAYS:
+    description: Certificate validity period considerations per ITU-T X.509
+    section: 7.1.2
+    severity: LOW
+    title: Certificate Lifetime Exceeds 47 Days
+    url: https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=X.509
+description: ITU-T/ISO standard defining the core X.509 certificate format and framework
+standard_name: ITU_X509
+title: ITU-T X.509 / ISO/IEC 9594-8 - Public Key and Attribute Certificate Frameworks
+url: https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=X.509
+version: '2017'

@@ -1,0 +1,23 @@
+# Development and testing dependencies for CertScanner
+# Install with: pip install -r requirements-dev.txt
+
+# Include production dependencies
+-r requirements.txt
+
+# Testing framework
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+pytest-asyncio>=0.21.0
+
+# Time mocking for certificate validity testing
+freezegun>=1.2.0
+
+# HTTP mocking for OCSP/CRL endpoint testing
+responses>=0.23.0
+
+# Development tools (optional but recommended)
+black>=23.0.0          # Code formatting
+flake8>=6.0.0          # Linting
+mypy>=1.0.0            # Type checking
+pre-commit>=3.0.0      # Git hooks

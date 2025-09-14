@@ -1,0 +1,52 @@
+# Certificate Scanner Configuration
+# This is a sample configuration file showing all available options
+
+# Target URLs to scan (required)
+# Supports multiple URLs, IP addresses, and CIDR ranges
+urls:
+  - "https://example.com"
+  - "https://google.com"
+
+# Ports to scan (list of integers or comma-separated string)
+ports: 
+  - 443
+  - 8443
+
+# Number of concurrent threads for scanning
+# Default: system default (min(32, CPU_count + 4))
+# threads: 20  # Uncomment to override system default
+
+
+# Connection timeout in seconds
+timeout: 5
+
+# Output format: brief, table, json, ndjson, csv
+output_format: "brief"
+
+# Enable verbose logging
+verbose: false
+
+# Advanced Certificate Validation Configuration
+validation:
+  # Validation profile: SERVER_DEFAULT, CABF_ONLY, NIST_ONLY, MOZILLA_ONLY, MINIMAL
+  # - SERVER_DEFAULT: Comprehensive validation for server certificates (default)
+  # - CABF_ONLY: Only CA/Browser Forum Baseline Requirements
+  # - NIST_ONLY: Only NIST SP 800-52 Rev 2
+  # - MOZILLA_ONLY: Only Mozilla Root Store Policy
+  # - MINIMAL: Minimal validation using only CABF_BR
+  profile: "SERVER_DEFAULT"
+  
+  # Minimum severity to display: CRITICAL, HIGH, MEDIUM, LOW, INFO
+  severity_filter: "MEDIUM"
+
+# Example configurations for different use cases:
+
+# Show more findings (uncomment to use):
+# validation:
+#   profile: "SERVER_DEFAULT"
+#   severity_filter: "LOW"
+
+# Minimal security scanning for CI/CD (uncomment to use):
+# validation:
+#   profile: "MINIMAL"
+#   severity_filter: "CRITICAL"

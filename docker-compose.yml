@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  ktscan:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    image: ktscan:latest
+    container_name: ktscan
+    
+    # Environment variables
+    environment:
+      - PYTHONUNBUFFERED=1
+      - KTSCAN_CONFIG_DIR=/app/config
+    
+    # Volume mounts for config and output
+    volumes:
+      - ./config:/app/config:ro
+      - ./output:/app/output:rw
+      - ./logs:/app/logs:rw
+    
+    # Network mode for accessing external hosts
+    network_mode: host
+    
+    # Override default command - change this for your use case
+    command: ["--help"]
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+        reservations:
+          memory: 256M
+          cpus: '0.25'
+
+  # Development version with source code mounted
+  ktscan-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    image: ktscan:dev
+    container_name: ktscan-dev
+    
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+    
+    volumes:
+      - .:/app:rw
+      - ./output:/app/output:rw
+      - ./logs:/app/logs:rw
+    
+    network_mode: host
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+    
+    profiles:
+      - dev

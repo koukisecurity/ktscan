@@ -1,0 +1,62 @@
+checks:
+  REVOCATION.CERTIFICATE_REVOKED:
+    description: Certificate has been revoked per OCSP response
+    section: '2.2'
+    severity: CRITICAL
+    title: Certificate Revoked
+    url: https://tools.ietf.org/rfc/rfc6960.txt#section-2.2
+  REVOCATION.INSECURE_OCSP_URL:
+    description: OCSP endpoint uses insecure HTTP instead of HTTPS per RFC 6960
+    section: '2.1'
+    severity: MEDIUM
+    title: Insecure OCSP URL
+    url: https://tools.ietf.org/rfc/rfc6960.txt#section-2.1
+  REVOCATION.INVALID_OCSP_URL:
+    description: OCSP endpoint URL is malformed per RFC 6960
+    section: '2.1'
+    severity: HIGH
+    title: Invalid OCSP URL
+    url: https://tools.ietf.org/rfc/rfc6960.txt#section-2.1
+  REVOCATION.MISSING_OCSP_INFO:
+    description: Certificate lacks OCSP endpoint information per RFC 6960
+    section: '2.1'
+    severity: MEDIUM
+    title: Missing OCSP Information
+    url: https://tools.ietf.org/rfc/rfc6960.txt#section-2.1
+  REVOCATION.MISSING_REVOCATION_INFO:
+    description: Certificate lacks both OCSP and CRL revocation information
+    section: '2.1'
+    severity: MEDIUM
+    title: Missing Revocation Information
+    url: https://tools.ietf.org/rfc/rfc6960.txt#section-2.1
+  REVOCATION.OCSP_ENDPOINT_UNREACHABLE:
+    description: OCSP responder endpoint is unreachable per RFC 6960
+    section: '2.2'
+    severity: HIGH
+    title: OCSP Endpoint Unreachable
+    url: https://tools.ietf.org/rfc/rfc6960.txt#section-2.2
+  REVOCATION.OCSP_NONCE_MISMATCH:
+    description: OCSP response nonce does not match request nonce per RFC 6960
+    section: 4.4.1
+    severity: LOW
+    title: OCSP Nonce Mismatch
+    url: https://tools.ietf.org/rfc/rfc6960.txt#section-4.4.1
+  REVOCATION.OCSP_RESPONDER_ERROR:
+    description: OCSP responder returned error response per RFC 6960
+    section: '2.3'
+    severity: HIGH
+    title: OCSP Responder Error
+    url: https://tools.ietf.org/rfc/rfc6960.txt#section-2.3
+  REVOCATION.OCSP_TIMEOUT:
+    description: OCSP responder request timed out per RFC 6960
+    section: '2.2'
+    severity: MEDIUM
+    title: OCSP Timeout
+    url: https://tools.ietf.org/rfc/rfc6960.txt#section-2.2
+description: IETF standard for Online Certificate Status Protocol (OCSP) for certificate
+  revocation checking
+standard_name: RFC6960
+title: RFC 6960 - X.509 Internet Public Key Infrastructure Online Certificate Status
+  Protocol - OCSP
+url: https://tools.ietf.org/rfc/rfc6960.txt
+version: RFC 6960

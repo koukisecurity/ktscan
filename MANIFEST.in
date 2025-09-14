@@ -1,0 +1,31 @@
+# Include package metadata
+include README.md
+include LICENSE
+include CHANGELOG.md
+
+# Include requirements files
+include requirements.txt
+include requirements-dev.txt
+
+# Include configuration files
+include pytest.ini
+include .gitignore
+
+# Include test certificates and test data
+recursive-include tests/certificates *.py
+recursive-include tests/data *
+
+# Exclude development and build artifacts
+exclude .coverage
+exclude .pytest_cache
+exclude build
+exclude dist
+exclude *.egg-info
+prune build/
+prune dist/
+prune *.egg-info/
+prune .pytest_cache/
+prune __pycache__/
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *~

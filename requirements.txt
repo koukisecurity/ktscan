@@ -1,0 +1,23 @@
+# Production dependencies for CertScanner
+# Install with: pip install -r requirements.txt
+
+# System trust store integration (required for chain validation)
+truststore>=0.10.4
+
+# CLI framework
+click>=8.0.0
+
+# Configuration file parsing
+pyyaml>=6.0
+
+# X.509 certificate parsing and cryptographic operations
+cryptography>=41.0.0
+
+# DNS resolution for certificate discovery
+dnspython>=2.1.0
+
+# Rich terminal output formatting
+rich>=13.0.0
+
+# HTTP requests for OCSP/CRL validation and certificate fetching
+requests>=2.31.0

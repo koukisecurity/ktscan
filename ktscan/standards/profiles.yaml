@@ -1,0 +1,20 @@
+profiles:
+  SERVER_DEFAULT: ["CABF_BR", "ITU_X509", "NIST_800-52r2", "RFC5280", "RFC6066", "RFC6960", "RFC9525"]
+  CABF_ONLY: ["CABF_BR"]
+  NIST_ONLY: ["NIST_800-52r2"]
+  MOZILLA_ONLY: ["MOZILLA_ROOTSTORE"]
+  MINIMAL: ["CABF_BR"]
+  
+# Validation Profiles Configuration
+#
+# Profiles define collections of standards that can be applied together.
+# 
+# Static profiles (defined here):
+#   - SERVER_DEFAULT: Comprehensive validation for server certificates (all standards except MOZILLA_ROOTSTORE)
+#   - CABF_ONLY: Only CA/Browser Forum Baseline Requirements
+#   - NIST_ONLY: Only NIST SP 800-52 Rev 2
+#   - MOZILLA_ONLY: Only Mozilla Root Store Policy
+#   - MINIMAL: Minimal validation using only CABF_BR
+#
+# Dynamic profiles (auto-generated):
+#   - ALL: Dynamically includes all available standards from the standards directory

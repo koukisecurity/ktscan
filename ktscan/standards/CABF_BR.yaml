@@ -1,0 +1,336 @@
+checks:
+  CERT.INSUFFICIENT_SERIAL_ENTROPY:
+    description: Serial number must contain at least 64 bits of entropy
+    section: 7.1.2.7
+    severity: MEDIUM
+    title: Insufficient Serial Number Entropy
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#7127-subscriber-server-certificate-profile
+  CRYPTO.DEPRECATED_ALGORITHM:
+    description: Certificate uses deprecated signature algorithm
+    section: 7.1.3
+    severity: HIGH
+    title: Deprecated Signature Algorithm
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#713-algorithm-object-identifiers
+  CRYPTO.INVALID_RSA_EXPONENT:
+    description: RSA public exponent must be odd and ≥ 3
+    section: 6.1.5
+    severity: HIGH
+    title: Invalid RSA Public Exponent
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#615-key-sizes
+  CRYPTO.RSA_SIZE_CRITICALLY_WEAK:
+    description: RSA key size critically weak (less than 1024 bits)
+    section: 6.1.5
+    severity: CRITICAL
+    title: Critically Weak RSA Key Size
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#615-key-sizes
+  CRYPTO.RSA_SIZE_TOO_SMALL:
+    description: RSA key size below minimum 2048 bits
+    section: 6.1.5
+    severity: HIGH
+    title: Weak RSA Key Size
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#615-key-sizes
+  CRYPTO.WEAK_ALGORITHM:
+    description: Certificate uses weak signature algorithm
+    section: 7.1.3
+    severity: CRITICAL
+    title: Weak Signature Algorithm
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#713-algorithm-object-identifiers
+  CRYPTO.WEAK_RSA:
+    description: RSA key size below CABF requirements
+    section: 6.1.5
+    severity: HIGH
+    title: Weak RSA Key Size
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#615-key-sizes
+  CRYPTO.WEAK_RSA_CRITICAL:
+    description: RSA key size critically weak
+    section: 6.1.5
+    severity: CRITICAL
+    title: Critically Weak RSA Key
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#615-key-sizes
+  DNS.CAA_REQUIRED:
+    description: CAA record checking required for domain validation
+    section: 3.2.2.8
+    severity: HIGH
+    title: CAA Record Required
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#3228-caa-records
+  DNS.CAA_VIOLATION:
+    description: Domain CAA record prohibits certificate issuance
+    section: 3.2.2.8
+    severity: HIGH
+    title: CAA Record Violation
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#3228-caa-records
+  EXTENSION.BASIC_CONSTRAINTS:
+    description: Basic Constraints extension requirements not met
+    section: 7.1.4.2.4
+    severity: HIGH
+    title: Basic Constraints Violation
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71424-basicconstraints-extension
+  EXTENSION.CABF_MISSING_POLICY_IDENTIFIER:
+    description: Certificate lacks required CA/Browser Forum Policy Identifier
+    section: 7.1.4.2.5
+    severity: HIGH
+    title: Missing CABF Policy Identifier
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71425-certificatepolicies-extension
+  EXTENSION.MISSING_KEY_USAGE:
+    description: Certificate lacks Key Usage extension
+    section: 7.1.4.2.2
+    severity: HIGH
+    title: Missing Key Usage Extension
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71422-keyusage-extension
+  EXTENSION.SERVER_AUTH_PURPOSE:
+    description: Certificate lacks server authentication extended key usage
+    section: 7.1.4.2.3
+    severity: HIGH
+    title: Missing Server Authentication Purpose
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71423-extendedkeyusage-extension
+  REVOCATION.CERTIFICATE_REVOKED:
+    description: Certificate has been revoked by the issuing CA
+    section: '4.9'
+    severity: CRITICAL
+    title: Certificate Revoked
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#49-certificate-revocation-and-status-checking
+  REVOCATION.CRL_PARSE_ERROR:
+    description: Failed to parse Certificate Revocation List
+    section: 4.9.6
+    severity: MEDIUM
+    title: CRL Parse Error
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#496-crl-and-crl-distribution-points
+  REVOCATION.CRL_UNAVAILABLE:
+    description: Certificate Revocation List could not be retrieved
+    section: '4.9'
+    severity: HIGH
+    title: CRL Unavailable
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#49-certificate-revocation-and-status-checking
+  REVOCATION.INSECURE_CRL_URL:
+    description: CRL URL uses HTTP instead of HTTPS
+    section: 4.9.6
+    severity: LOW
+    title: Insecure CRL URL
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#496-crl-and-crl-distribution-points
+  REVOCATION.INSECURE_OCSP_URL:
+    description: OCSP URL uses HTTP instead of HTTPS
+    section: 4.9.7
+    severity: MEDIUM
+    title: Insecure OCSP URL
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#497-ocsp-responses
+  REVOCATION.INVALID_CRL_URL:
+    description: CRL URL is not a valid HTTP endpoint
+    section: 4.9.6
+    severity: MEDIUM
+    title: Invalid CRL URL
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#496-crl-and-crl-distribution-points
+  REVOCATION.INVALID_OCSP_URL:
+    description: OCSP URL is not a valid HTTP endpoint
+    section: 4.9.7
+    severity: HIGH
+    title: Invalid OCSP URL
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#497-ocsp-responses
+  REVOCATION.MISSING_OCSP_INFO:
+    description: Certificate lacks OCSP endpoint in Authority Information Access
+    section: 4.9.7
+    severity: MEDIUM
+    title: Missing OCSP Information
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#497-ocsp-responses
+  REVOCATION.MISSING_REVOCATION_INFO:
+    description: Certificate lacks both OCSP and CRL revocation information
+    section: '4.9'
+    severity: MEDIUM
+    title: Missing Revocation Information
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#49-certificate-revocation-and-status-checking
+  REVOCATION.OCSP_ENDPOINT_UNREACHABLE:
+    description: OCSP endpoint returned non-success HTTP status
+    section: 4.9.7
+    severity: HIGH
+    title: OCSP Endpoint Unreachable
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#497-ocsp-responses
+  REVOCATION.OCSP_NONCE_MISMATCH:
+    description: OCSP response nonce does not match request nonce
+    section: 4.9.7
+    severity: LOW
+    title: OCSP Nonce Mismatch
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#497-ocsp-responses
+  REVOCATION.OCSP_RESPONDER_ERROR:
+    description: OCSP responder returned an error
+    section: '4.9'
+    severity: HIGH
+    title: OCSP Responder Error
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#49-certificate-revocation-and-status-checking
+  REVOCATION.OCSP_TIMEOUT:
+    description: OCSP responder request timed out
+    section: 4.9.7
+    severity: MEDIUM
+    title: OCSP Timeout
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#497-ocsp-responses
+  REVOCATION.REVOKED_IN_CHAIN:
+    description: Certificate chain contains revoked certificate
+    section: '4.9'
+    severity: CRITICAL
+    title: Revoked Certificate in Chain
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#49-certificate-revocation-and-status-checking
+  SUBJECT.CABF_OU_PROHIBITED:
+    description: organizationalUnitName field is prohibited in server certificates
+    section: 7.1.4.1
+    severity: HIGH
+    title: organizationalUnitName Prohibited
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#7141-subject-information-requirements
+  SUBJECT.CN_NOT_IN_SAN:
+    description: Common Name must be included in Subject Alternative Name
+    section: 7.1.4.2.1
+    severity: HIGH
+    title: CN Not in SAN
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.DUPLICATE_DNS_NAMES:
+    description: SAN extension contains duplicate DNS names
+    section: 7.1.4.2.1
+    severity: MEDIUM
+    title: Duplicate DNS Names in SAN
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.EMPTY_EXTENSION:
+    description: Subject Alternative Name extension is present but empty
+    section: 7.1.4.2.1
+    severity: HIGH
+    title: Empty SAN Extension
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.EXCESSIVE_WILDCARDS:
+    description: Certificate contains excessive wildcard usage
+    section: 7.1.4.2.1
+    severity: MEDIUM
+    title: Excessive Wildcard Usage
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.HOSTNAME_MISMATCH:
+    description: Hostname does not match certificate during trust validation
+    section: 7.1.4.2.1
+    severity: CRITICAL
+    title: Hostname Mismatch in Trust Validation
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.INTERNAL_NAME:
+    description: Certificate contains internal server name
+    section: 7.1.4.2.1
+    severity: HIGH
+    title: Internal Name
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.INVALID_DNS_NAME:
+    description: SAN contains invalid DNS name format
+    section: 7.1.4.2.1
+    severity: HIGH
+    title: Invalid DNS Name in SAN
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.INVALID_IP_ADDRESS:
+    description: SAN contains invalid IP address format
+    section: 7.1.4.2.1
+    severity: HIGH
+    title: Invalid IP Address in SAN
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.LOOPBACK_IP:
+    description: SAN contains loopback IP address
+    section: 7.1.4.2.1
+    severity: HIGH
+    title: Loopback IP Address in SAN
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.MISSING_EXTENSION:
+    description: Certificate lacks required Subject Alternative Name extension
+    section: 7.1.4.2.1
+    severity: HIGH
+    title: Missing SAN Extension
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.MULTIPLE_WILDCARDS:
+    description: DNS name contains multiple wildcard characters
+    section: 7.1.4.2.1
+    severity: HIGH
+    title: Multiple Wildcards in DNS Name
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.NESTED_WILDCARD:
+    description: DNS name contains nested wildcard patterns
+    section: 7.1.4.2.1
+    severity: HIGH
+    title: Nested Wildcard DNS Name
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.RESERVED_IP_ADDRESS:
+    description: Certificate contains reserved or internal IP address
+    section: 7.1.4.2.1
+    severity: HIGH
+    title: Reserved IP Address
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.WILDCARD_EMPTY_LABEL:
+    description: Wildcard certificate has empty domain label
+    section: 7.1.4.2.1
+    severity: HIGH
+    title: Wildcard Empty Domain Label
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.WILDCARD_INSUFFICIENT_LABELS:
+    description: Wildcard certificate has insufficient domain labels
+    section: 7.1.4.2.1
+    severity: HIGH
+    title: Wildcard Insufficient Domain Labels
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.WILDCARD_IN_PUBLIC_SUFFIX:
+    description: Wildcard certificate includes public suffix domain
+    section: 7.1.4.2.1
+    severity: MEDIUM
+    title: Wildcard in Public Suffix
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  SUBJECT.WILDCARD_NOT_LEFTMOST:
+    description: Wildcard character not in leftmost position
+    section: 7.1.4.2.1
+    severity: HIGH
+    title: Wildcard Not in Leftmost Position
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#71421-subject-alternative-name-extension
+  TRUST.EXPIRED_IN_CHAIN:
+    description: Certificate chain contains expired certificate
+    section: 6.3.2
+    severity: HIGH
+    title: Expired Certificate in Chain
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#632-certificate-operational-periods-and-key-pair-usage-periods
+  TRUST.INCOMPLETE_CHAIN:
+    description: Certificate chain contains only the end-entity certificate
+    section: 6.3.1
+    severity: MEDIUM
+    title: Incomplete Certificate Chain
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#631-subscriber-certificate-issuance
+  TRUST.INTERMEDIATE_MISSING_REVOCATION:
+    description: Intermediate certificate lacks OCSP and CRL revocation information
+    section: '4.9'
+    severity: MEDIUM
+    title: Intermediate Missing Revocation Information
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#49-certificate-revocation-and-status-checking
+  TRUST.SELF_SIGNED:
+    description: Certificate is self-signed and not from trusted CA
+    section: 6.1.1.3
+    severity: CRITICAL
+    title: Self-Signed Certificate
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#6113-subordinate-ca-private-key-protection
+  TRUST.SIGNATURE_INVALID:
+    description: Certificate signature verification failed in the chain
+    section: 6.1.3
+    severity: HIGH
+    title: Invalid Certificate Chain Signature
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#613-certificate-signature
+  TRUST.UNTRUSTED_ROOT:
+    description: Certificate chain does not terminate at trusted root CA
+    section: 6.1.1.1
+    severity: HIGH
+    title: Untrusted Root Certificate
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#6111-root-ca-private-key-protection
+  TRUST.VALIDATION_ERROR:
+    description: Failed to perform chain validation
+    section: 6.1.3
+    severity: HIGH
+    title: Chain Validation Error
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#613-certificate-signature
+  VALIDITY.LIFETIME_EXCEEDS_398_DAYS:
+    description: Certificate lifetime exceeds current 398 days recommendation
+    section: 6.3.2
+    severity: MEDIUM
+    title: Certificate Lifetime Exceeds 398 Days
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#632-certificate-operational-periods-and-key-pair-usage-periods
+  VALIDITY.LIFETIME_TOO_LONG:
+    description: Certificate lifetime exceeds 825 days limit
+    section: 6.3.2
+    severity: HIGH
+    title: Certificate Lifetime Too Long
+    url: https://cabforum.org/working-groups/server/baseline-requirements/requirements/#632-certificate-operational-periods-and-key-pair-usage-periods
+description: Industry standard for publicly-trusted SSL/TLS certificates
+standard_name: CABF_BR
+title: CA/Browser Forum Baseline Requirements
+url: https://cabforum.org/baseline-requirements-documents/
+version: v2.0.7

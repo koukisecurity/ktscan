@@ -1,0 +1,32 @@
+checks:
+  SUBJECT.CN_ONLY_DEPRECATED:
+    description: Relying on CN-only for identity is deprecated per RFC 9525
+    section: 6.4.4
+    severity: MEDIUM
+    title: Common Name Only (Deprecated)
+    url: https://tools.ietf.org/rfc/rfc9525.txt#section-6.4.4
+  SUBJECT.HOSTNAME_MISMATCH:
+    description: Hostname does not match certificate service identity per RFC 9525
+    section: '6'
+    severity: CRITICAL
+    title: Service Identity Verification Failed
+    url: https://tools.ietf.org/rfc/rfc9525.txt#section-6
+  SUBJECT.MISSING_EXTENSION:
+    description: Subject Alternative Name extension required for service identity
+      per RFC 9525
+    section: 6.4.4
+    severity: HIGH
+    title: Missing SAN Extension
+    url: https://tools.ietf.org/rfc/rfc9525.txt#section-6.4.4
+  SUBJECT.WILDCARD_VALIDATION:
+    description: Wildcard certificate validation rules per RFC 9525
+    section: '7.2'
+    severity: MEDIUM
+    title: Wildcard Certificate Validation
+    url: https://tools.ietf.org/rfc/rfc9525.txt#section-7.2
+description: IETF standard for representation and verification of domain-based application
+  service identity within TLS certificates (obsoletes RFC 6125)
+standard_name: RFC9525
+title: RFC 9525 - Service Identity in TLS
+url: https://tools.ietf.org/rfc/rfc9525.txt
+version: RFC 9525

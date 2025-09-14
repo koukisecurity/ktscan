@@ -1,0 +1,54 @@
+checks:
+  CRYPTO.RSA_SIZE_MOZILLA_MIN:
+    description: RSA key size below Mozilla recommended minimum
+    section: 5.1.1
+    severity: MEDIUM
+    title: Mozilla RSA Key Size Warning
+    url: https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/#511-rsa
+  CRYPTO.WEAK_ALGORITHM:
+    description: Signature algorithm prohibited by Mozilla Root Store Policy
+    section: 5.1.2
+    severity: CRITICAL
+    title: Mozilla Prohibited Signature Algorithm
+    url: https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/#512-signature-algorithms
+  CRYPTO.WEAK_RSA:
+    description: RSA key size below Mozilla requirements
+    section: 5.1.1
+    severity: HIGH
+    title: Mozilla Weak RSA Key Size
+    url: https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/#511-rsa
+  CRYPTO.WEAK_RSA_CRITICAL:
+    description: RSA key size critically weak per Mozilla policy
+    section: 5.1.1
+    severity: CRITICAL
+    title: Mozilla Critically Weak RSA Key
+    url: https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/#511-rsa
+  TRUST.SIGNATURE_INVALID:
+    description: Certificate chain signature validation failed
+    section: 5.1.2
+    severity: HIGH
+    title: Invalid Chain Signature
+    url: https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/#512-signature-algorithms
+  TRUST.UNTRUSTED_ROOT:
+    description: Root certificate not trusted by Mozilla
+    section: '4.1'
+    severity: HIGH
+    title: Root Not in Mozilla Trust Store
+    url: https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/#41-inclusion
+  TRUST.WEAK_SIGNATURE_ALGORITHM:
+    description: Signature algorithm prohibited by Mozilla Root Store Policy
+    section: 5.1.2
+    severity: HIGH
+    title: Mozilla Prohibited Signature Algorithm
+    url: https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/#512-signature-algorithms
+  VALIDITY.LIFETIME_MOZILLA_MAX:
+    description: Certificate lifetime may exceed Mozilla recommendations
+    section: 5.1.4
+    severity: MEDIUM
+    title: Mozilla Certificate Lifetime Warning
+    url: https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/#514-certificate-lifetime
+description: Mozilla's policy for trusted root certificates
+standard_name: MOZILLA_ROOTSTORE
+title: Mozilla Root Store Policy
+url: https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/
+version: v2.8
