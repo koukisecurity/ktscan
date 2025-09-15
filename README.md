@@ -51,7 +51,7 @@ docker run --rm ktscan scan --url https://example.com
 ```bash
 # Pull and run the pre-built image
 docker pull koukisecurity/ktscan
-docker run --rm koukisecurity/ktscan --url https://example.com
+docker run --rm koukisecurity/ktscan scan --url https://example.com
 ```
 
 ## Quick Start
@@ -82,25 +82,25 @@ python -m ktscan.cli init-config my-config.yaml
 
 ```bash
 # Basic scan with Docker
-docker run --rm ktscan --url https://example.com
+docker run --rm ktscan scan --url https://example.com
 
 # Scan multiple ports
-docker run --rm ktscan --url example.com --ports 443,8443,9443 --threads 20
+docker run --rm ktscan scan --url example.com --ports 443,8443,9443 --threads 20
 
 # Output as JSON
-docker run --rm ktscan --url https://example.com --output-format json
+docker run --rm ktscan scan --url https://example.com --output-format json
 
 # Brief output format
-docker run --rm ktscan --url https://example.com --output-format brief
+docker run --rm ktscan scan --url https://example.com --output-format brief
 
 # Save output to file (mount current directory)
-docker run --rm -v $(pwd):/output ktscan --url https://example.com --output-format json > /output/results.json
+docker run --rm -v $(pwd):/output ktscan scan --url https://example.com --output-format json > /output/results.json
 
 # Use custom configuration (mount config directory)
 docker run --rm -v $(pwd)/config:/config ktscan --config /config/my-config.yaml
 
 # Scan with verbose output
-docker run --rm ktscan --url https://example.com --verbose
+docker run --rm ktscan scan --url https://example.com --verbose
 ```
 
 ## Usage
