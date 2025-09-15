@@ -11,9 +11,7 @@ Before we can accept your contributions, we need you to sign our Contributor Lic
 2. If not, provide you with a link to sign it online
 3. Once signed, automatically update your PR status
 
-You can review our CLA document here: [Individual CLA](CLA-INDIVIDUAL.md)
-
-**Corporate contributors**: If you're contributing on behalf of your company, please contact us at [YOUR_EMAIL_ADDRESS] about signing our [Corporate CLA](CLA-CORPORATE.md).
+You can review our CLA document here: [Individual CLA](https://gist.github.com/SOcr4t3s/dc91a5772f07885686ee156f45972f2a)
 
 ## Getting Started
 
