@@ -105,8 +105,21 @@ docker run --rm ktscan scan --url https://example.com --verbose
 
 ## Usage
 
-### Command Line Options
+KTScan uses a command-based CLI structure. All commands require you to specify the command first:
 
+```bash
+ktscan <command> [options]
+```
+
+### Available Commands
+
+#### Scan SSL/TLS certificates
+```bash
+ktscan scan --url <URL> [options]
+ktscan scan --config <config-file> [options]
+```
+
+**Options:**
 ```
 --url, -u          Target URL to scan (can be used multiple times)
 --config, -c       Path to YAML config file
@@ -119,6 +132,43 @@ docker run --rm ktscan scan --url https://example.com --verbose
 --standard, -s     Specific standards to include (can be used multiple times)
 --severity         Minimum severity to show: CRITICAL, HIGH, MEDIUM, LOW, INFO (default: MEDIUM)
 --no-color         Disable color in output text
+--help, -h         Show help message
+```
+
+#### Generate sample configuration file
+```bash
+ktscan init-config <config-file>
+```
+Creates a sample YAML configuration file with all available options and comments.
+
+#### Retrieve information about available checks and standards
+```bash
+ktscan get categories         # List all check categories
+ktscan get standards          # List all available standards
+ktscan get profiles           # List all validation profiles
+ktscan get checks             # List all available checks
+ktscan get checks --category <category>   # List checks for specific category
+ktscan get checks --standard <standard>   # List checks for specific standard
+ktscan get checks --profile <profile>     # List checks for specific profile
+```
+
+#### Get detailed information about checks
+```bash
+ktscan describe category <category-id>        # Describe a check category
+ktscan describe check <category>:<check-id>   # Describe a specific check
+```
+
+**Examples:**
+```bash
+# Describe the cryptography category
+ktscan describe category crypto
+
+# Describe a specific check
+ktscan describe check crypto:weak_signature_algorithm
+```
+
+### Global Options
+```
 --version          Show version information
 --help, -h         Show help message
 ```
@@ -150,6 +200,53 @@ validation:
 
 For a complete example with all available options, see [config/default.yaml](config/default.yaml).
 
+## Examples
+
+### Output Formats
+```bash
+# Brief output (default) - focused security findings
+ktscan scan --url https://example.com --output-format brief
+
+# Table output - detailed tabular view
+ktscan scan --url https://example.com --output-format table
+
+# JSON output - machine readable
+ktscan scan --url https://example.com --output-format json
+
+# CSV output - spreadsheet compatible
+ktscan scan --url https://example.com --output-format csv
+```
+
+### Advanced Options
+```bash
+# Use specific validation profile
+ktscan scan --url https://example.com --profile NIST_ONLY
+
+# Filter by severity level
+ktscan scan --url https://example.com --severity HIGH
+
+# Use specific standards only
+ktscan scan --url https://example.com --standard NIST_800-52r2 --standard RFC5280
+
+# Verbose output with detailed information
+ktscan scan --url https://example.com --verbose
+```
+
+### Docker Examples
+```bash
+# Basic Docker scan
+docker run --rm ktscan scan --url https://example.com
+
+# Save output to file
+docker run --rm -v $(pwd):/output ktscan scan --url https://example.com --output-format json > results.json
+
+# Use custom configuration
+docker run --rm -v $(pwd)/config:/config ktscan scan --config /config/my-config.yaml
+
+# Generate config file in Docker
+docker run --rm -v $(pwd):/output ktscan init-config /output/my-config.yaml
+```
+
 ## Architecture
 
 The tool is organized into modular components:
@@ -176,12 +273,7 @@ The tool analyzes certificates and provides:
 ## Output Formats
 
 ### Brief Format (Default)
-Focused output showing only findings with minimal extraneous information. Features:
-- Human-readable scan completion time
-- Shows profiles/standards used during scan  
-- Groups findings by target with ports and endpoint counts
-- Clean table format using Rich library
-- Respects severity filtering
+Focused human-readable output format showing only findings with minimal extraneous information.
 
 ### Table Format
 Rich terminal table with color-coded status indicators and summary statistics.
@@ -235,7 +327,7 @@ services:
     volumes:
       - ./config:/config
       - ./output:/output
-    command: --url https://example.com --output-format json
+    command: scan --url https://example.com --output-format json
 ```
 
 Run with: `docker-compose run ktscan`
